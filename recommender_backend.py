@@ -3,7 +3,7 @@ import ast
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 
-def load_and_prepare_data(n=15000):
+def load_and_prepare_data(n=90000):
     df = pd.read_csv("RAW_recipes.csv", usecols=["id", "name", "ingredients", "tags", "steps"])
     df = df.dropna(subset=['name'])  # Remove entries with missing names
     df = df.head(n)
